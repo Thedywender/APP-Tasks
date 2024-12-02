@@ -3,6 +3,7 @@ import folderImage from '../assets/folder.jpeg';
 import Context from '../Context/Context';
 import { useNavigate } from 'react-router-dom';
 import { validatePassword, validateUsername } from '../utils/validation';
+import LoginForm from '../components/loginForm';
 
 function Login() {
 
@@ -43,12 +44,7 @@ function Login() {
         <>
             <h1>Welcome</h1>
             <img src={folderImage} alt="folder" />
-            <form onSubmit={handleSubmit} >
-                <input onChange={handleChange} id='username' name='username' type="text" placeholder='Enter your username' />
-                <input onChange={handleChange} id='password' name='password' type="password" placeholder='Enter your password' />
-                <p><a href='#password' >Forgot your Password</a></p>
-                <button>Sign in</button>
-            </form>
+            <LoginForm onChange={handleChange} onSubmit={handleSubmit} input={input} />
         </>
     );
 }
