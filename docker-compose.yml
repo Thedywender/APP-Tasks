@@ -9,3 +9,4 @@ services:
     ports:
       - 5173:5173
       - 3000:3000
+    command: sh -c "npx json-server src/api/data.json & npm run dev"

@@ -3,6 +3,7 @@ import Context from "../Context/Context";
 import flowers from "../assets/flowers.jpeg";
 import { Todo } from "../types/todoTypes";
 import TodoItem from "../components/todoItem";
+import { TailSpin } from "react-loader-spinner";
 
 function TodoList() {
     const { user, todos, loading, getTodos, editTodo } = useContext(Context);
@@ -26,7 +27,18 @@ function TodoList() {
             <p>Daily Tasks</p>
             <ul>
                 {loading ? (
-                    <p>Loading...</p>                    
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                        <TailSpin
+                            height="80"
+                            width="80"
+                            color="#4fa94d"
+                            ariaLabel="tail-spin-loading"
+                            radius="1"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                            visible={true}
+                        />
+                     </div>                    
                 )
                 : (
                     todos.map(task => (

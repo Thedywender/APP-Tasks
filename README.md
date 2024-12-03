@@ -48,3 +48,7 @@ export default tseslint.config({
   },
 })
 ```
+Para intalar o json-server:   npm install json-server
+
+Para rodar o Json-server e acessar os dados na api, o comando é:
+npx json-server src/api/data.json
