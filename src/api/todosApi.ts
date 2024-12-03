@@ -1,10 +1,6 @@
 const URL = 'http://localhost:3000';
+import { Todo } from '../types/todoTypes';
 
-export type Todo = {
-    id: number;
-    value: string;
-    checked: boolean;
-};
 
 export async function fetchTodos(): Promise<Todo[]> {
     try {

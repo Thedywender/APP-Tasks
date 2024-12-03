@@ -1,55 +1,54 @@
 {
-    "todos": [
+  "todos": [
     {
-      "id": 1,
+      "id": "1",
       "value": "Acordar",
-      "checked": false
+      "checked": true
     },
     {
-      "id": 2,
+      "id": "2",
       "value": "Estudar",
       "checked": false
     },
     {
-      "id": 3,
+      "id": "3",
       "value": "Trabalhar",
       "checked": false
     },
     {
-      "id": 4,
+      "id": "4",
       "value": "Tomar café da manhã",
-      "checked": true
+      "checked": false
     },
     {
-      "id": 5,
+      "id": "5",
       "value": "Fazer exercícios físicos",
       "checked": false
     },
     {
-      "id": 6,
+      "id": "6",
       "value": "Almoçar",
       "checked": true
     },
     {
-      "id": 7,
+      "id": "7",
       "value": "Ler um livro",
       "checked": false
     },
     {
-      "id": 8,
+      "id": "8",
       "value": "Limpar a casa",
       "checked": false
     },
     {
-      "id": 9,
+      "id": "9",
       "value": "Jantar",
       "checked": false
     },
     {
-      "id": 10,
+      "id": "10",
       "value": "Dormir",
       "checked": false
     }
   ]
 }
-  
