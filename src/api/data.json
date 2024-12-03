@@ -8,7 +8,7 @@
     {
       "id": "2",
       "value": "Estudar",
-      "checked": false
+      "checked": true
     },
     {
       "id": "3",
@@ -33,7 +33,7 @@
     {
       "id": "7",
       "value": "Ler um livro",
-      "checked": false
+      "checked": true
     },
     {
       "id": "8",
