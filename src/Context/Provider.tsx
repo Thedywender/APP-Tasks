@@ -1,10 +1,11 @@
 import { useState } from "react";
+// import { v4 as uuidv4 } from 'uuid';
 import { Todo } from "../types/todoTypes"
-import { fetchTodos, putTodo } from "../api/todosApi"
+import { fetchTodos, postTodo, putTodo } from "../api/todosApi"
 import Context from "./Context";
 import { ProviderProps, ProviderValues } from "../types/ProviderTypes";
 
-function Provider({ children}: ProviderProps) {
+function Provider({ children }: ProviderProps) {
     const [user, setUser] = useState('');
     const [todos, setTodos] = useState<Todo[]>([]);
     const [loading, setLoading] = useState(false);
@@ -44,7 +45,19 @@ function Provider({ children}: ProviderProps) {
             setLoading(false);
         }
     }
-    
+
+    const addTodos = async (task: string) => {
+        try {
+            setLoading(true);
+            const newTask = await postTodo(task);
+            setTodos([...todos, newTask]);
+        } catch {
+            console.error('Failed to add todo');
+        } finally {
+            setLoading(false);
+        }
+    }
+
 
     const values: ProviderValues = {
         user,
@@ -53,6 +66,7 @@ function Provider({ children}: ProviderProps) {
         loading,
         getTodos,
         editTodo,
+        addTodos,
     }
 
     return (
@@ -61,9 +75,9 @@ function Provider({ children}: ProviderProps) {
         </Context.Provider>
     )
 }
-    
-    
-    
-    
-    
+
+
+
+
+
 export default Provider;

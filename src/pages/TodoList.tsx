@@ -4,9 +4,12 @@ import flowers from "../assets/flowers.jpeg";
 import { Todo } from "../types/todoTypes";
 import TodoItem from "../components/todoItem";
 import { TailSpin } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom"
 
 function TodoList() {
     const { user, todos, loading, getTodos, editTodo } = useContext(Context);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if(!todos.length) {
@@ -23,7 +26,7 @@ function TodoList() {
         <>
             <img width="100" src={flowers} alt="Flowers" />
             <h1>Welcome, { user }</h1>
-            <button>ADD NEW TASK</button>
+            <button onClick={() => navigate("/todo/add")} >ADD NEW TASK</button>
             <p>Daily Tasks</p>
             <ul>
                 {loading ? (

@@ -11,4 +11,5 @@ export type ProviderValues = {
     todos: Todo[];
     getTodos: () => Promise<void>;
     editTodo: (taskData: Todo) => Promise<void>;
+    addTodos: (task: string) => Promise<void>;
 }
