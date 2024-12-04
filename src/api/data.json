@@ -1,16 +1,6 @@
 {
   "todos": [
     {
-      "id": "1",
-      "value": "Acordar",
-      "checked": false
-    },
-    {
-      "id": "2",
-      "value": "Estudar",
-      "checked": false
-    },
-    {
       "id": "3",
       "value": "Trabalhar",
       "checked": false
@@ -33,31 +23,6 @@
     {
       "id": "7",
       "value": "Ler um livro",
-      "checked": false
-    },
-    {
-      "id": "8",
-      "value": "Limpar a casa",
-      "checked": false
-    },
-    {
-      "id": "9",
-      "value": "Jantar",
-      "checked": false
-    },
-    {
-      "id": "10",
-      "value": "Dormir",
-      "checked": false
-    },
-    {
-      "id": "0f90",
-      "value": "tarefa aleatória",
-      "checked": false
-    },
-    {
-      "id": "45e0",
-      "value": "tarefa aleatoria",
       "checked": false
     }
   ]

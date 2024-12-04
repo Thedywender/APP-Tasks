@@ -12,4 +12,5 @@ export type ProviderValues = {
     getTodos: () => Promise<void>;
     editTodo: (taskData: Todo) => Promise<void>;
     addTodos: (task: string) => Promise<void>;
+    deleteTodo: (task: Todo) => Promise<void>;
 }

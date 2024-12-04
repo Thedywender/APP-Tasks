@@ -63,7 +63,7 @@ export async function putTodo(todo: Todo) {
         alert('Failed to update todo');
 }};
 
-export async function deleteTodo(todo: Todo) {
+export async function deleteTodo(todo: Todo): Promise<void> {
     try {
         const response = await fetch(`${URL}/todos/${todo.id}`, {
             method: 'DELETE',
@@ -71,9 +71,10 @@ export async function deleteTodo(todo: Todo) {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(todo),
         });
-        return response.json();
+        if (!response.ok) {
+            throw new Error('Failed to delete todo');
+        }
     }
     catch (e: unknown) {
         if (e instanceof Error) {
@@ -82,4 +83,5 @@ export async function deleteTodo(todo: Todo) {
             console.log('An unknown error occurred');
         }
         alert('Failed to delete todo');
+        throw e;
 }};

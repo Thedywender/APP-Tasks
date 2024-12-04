@@ -7,7 +7,7 @@ import { TailSpin } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom"
 
 function TodoList() {
-    const { user, todos, loading, getTodos, editTodo } = useContext(Context);
+    const { user, todos, loading, getTodos, editTodo, deleteTodo } = useContext(Context);
 
     const navigate = useNavigate();
 
@@ -45,7 +45,7 @@ function TodoList() {
                 )
                 : (
                     todos.map(task => (
-                        <TodoItem key={task.id} task={task} onChange={handleChange} />
+                        <TodoItem key={task.id} task={task} onChange={handleChange} deleteTodo={deleteTodo}/>
                     ))
 
                 )}

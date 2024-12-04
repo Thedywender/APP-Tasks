@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import { v4 as uuidv4 } from 'uuid';
 import { Todo } from "../types/todoTypes"
-import { fetchTodos, postTodo, putTodo } from "../api/todosApi"
+import { fetchTodos, postTodo, putTodo, deleteTodo as apiDeleteTodo } from "../api/todosApi"
 import Context from "./Context";
 import { ProviderProps, ProviderValues } from "../types/ProviderTypes";
 
@@ -58,6 +58,18 @@ function Provider({ children }: ProviderProps) {
         }
     }
 
+    const deleteTodo = async (task: Todo) => {
+        try {
+            setLoading(true);
+            await apiDeleteTodo(task);
+            setTodos(todos.filter((todo) => todo.id !== task.id));            
+        } catch {
+            console.error('Failed to delete todo');            
+        } finally {
+            setLoading(false);
+        }
+    }
+
 
     const values: ProviderValues = {
         user,
@@ -67,6 +79,7 @@ function Provider({ children }: ProviderProps) {
         getTodos,
         editTodo,
         addTodos,
+        deleteTodo,
     }
 
     return (
