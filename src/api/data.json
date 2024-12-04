@@ -49,6 +49,16 @@
       "id": "10",
       "value": "Dormir",
       "checked": false
+    },
+    {
+      "id": "0f90",
+      "value": "tarefa aleatória",
+      "checked": false
+    },
+    {
+      "id": "45e0",
+      "value": "tarefa aleatoria",
+      "checked": false
     }
   ]
 }

@@ -1,11 +1,15 @@
 import { useContext, useState } from "react";
 import Context from "../Context/Context";
 import flowers from "../assets/flowers.jpeg";
+import { useNavigate } from "react-router-dom";
+import { isTaskEmpty, doesTaskExist, 
+    startsWithNumber, isOnlyNumbers } from "../utils/validation";
 
 function AddTodo() {
 
-    const { user } = useContext(Context);
+    const { user, todos, addTodos } = useContext(Context);
     const [task, setTask] = useState('');
+    const navigate = useNavigate();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTask(event.target.value);
@@ -13,7 +17,19 @@ function AddTodo() {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setTask('');
+        
+        if (isTaskEmpty(task) || startsWithNumber(task) || isOnlyNumbers(task)) {
+            alert('Task cannot be empty, or start with a number or be only numbers');
+            return;
+        }
+
+        if (doesTaskExist(task, todos)) {
+            alert('Task already exists');
+            return;
+        }
+
+        addTodos(task);
+        navigate('/todo');
     }
 
 
